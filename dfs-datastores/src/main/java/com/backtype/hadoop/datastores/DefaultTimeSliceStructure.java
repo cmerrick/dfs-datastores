@@ -1,5 +1,7 @@
 package com.backtype.hadoop.datastores;
 
+import java.util.Map;
+
 public class DefaultTimeSliceStructure extends TimeSliceStructure<byte[]> {
     public byte[] deserialize(byte[] serialized) {
         return serialized;
@@ -14,4 +16,8 @@ public class DefaultTimeSliceStructure extends TimeSliceStructure<byte[]> {
     public Class getType() {
         return EMPTY_BYTE_ARRAY.getClass();
     }
+
+    public void configure(Map<String, Object> args) {
+    }
+
 }

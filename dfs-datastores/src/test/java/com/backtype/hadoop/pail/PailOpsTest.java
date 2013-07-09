@@ -432,5 +432,8 @@ public class PailOpsTest extends FSTestCase {
             return String.class;
         }
 
+	public void configure(Map<String, Object> args) {
+	}
+
     }
 }

@@ -116,7 +116,9 @@ public class PailSpec implements Writable, Serializable {
         String name = (String) format.get("format");
         Map<String, Object> args = (Map<String, Object>) format.get("args");
         String structClass = (String) format.get("structure");
-        return new PailSpec(name, args, getStructureFromClass(structClass));
+	PailStructure struct = getStructureFromClass(structClass);
+	struct.configure(args);
+        return new PailSpec(name, args, struct);
     }
 
     public void writeToStream(OutputStream os) {

@@ -3,6 +3,8 @@ package com.backtype.hadoop.pail;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.Map;
+
 public class TestStructure implements PailStructure<String> {
 
     public boolean isValidTarget(String... dirs) {
@@ -46,5 +48,8 @@ public class TestStructure implements PailStructure<String> {
 
     public Class getType() {
         return String.class;
+    }
+
+    public void configure(Map<String, Object> args) {
     }
 }

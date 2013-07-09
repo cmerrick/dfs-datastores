@@ -32,5 +32,4 @@ public abstract class TimeSliceStructure<T> implements PailStructure<T> {
     public final List<String> getTarget(Object object) {
         return Collections.EMPTY_LIST; // this isn't valid. At write time, a valid category must be provided
     }
-
 }

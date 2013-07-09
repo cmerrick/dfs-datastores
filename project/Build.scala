@@ -35,6 +35,8 @@ object DfsDatastoresBuild extends Build {
 
     pomIncludeRepository := { x => false },
 
+    publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository"))),
+/*
     publishTo <<= version { (v: String) =>
       val nexus = "https://oss.sonatype.org/"
       if (v.trim.endsWith("SNAPSHOT"))
@@ -42,7 +44,7 @@ object DfsDatastoresBuild extends Build {
       else
         Some("releases"  at nexus + "service/local/staging/deploy/maven2")
     },
-
+*/
     pomExtra := (
       <url>https://github.com/nathanmarz/dfs-datastores</url>
       <licenses>
@@ -72,7 +74,9 @@ object DfsDatastoresBuild extends Build {
           <name>Sam Ritchie</name>
           <url>http://twitter.com/sritchie</url>
         </developer>
-      </developers>)
+      </developers>),
+
+      sources in doc in Compile := List()
   )
 
   lazy val bundle = Project(
